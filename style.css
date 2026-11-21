@@ -1,0 +1,921 @@
+
+/* =================================
+   MEMÓRIAS ESCOLARES
+   BLOG ESTILO ANOS 2000
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #e9a9bd;
+    --pink-light: #fff0f4;
+    --pink-dark: #bd718d;
+    --cream: #fffaf1;
+    --paper: #fffdf8;
+    --brown: #6f514d;
+    --brown-light: #987c75;
+    --green: #a5bba0;
+    --border: #e9c8cd;
+}
+
+body {
+    background-color: #f8e9e8;
+    background-image:
+        radial-gradient(#ffffff 1px, transparent 1px),
+        radial-gradient(#f2d5da 1px, transparent 1px);
+    background-size: 18px 18px, 18px 18px;
+    background-position: 0 0, 9px 9px;
+    color: var(--brown);
+    font-family: "Comic Neue", cursive;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.page-wrapper {
+    width: min(1120px, 94%);
+    margin: 28px auto;
+    background: var(--paper);
+    border: 1px solid #e8c5ca;
+    box-shadow: 0 5px 22px rgba(120, 75, 85, 0.12);
+    padding: 18px;
+}
+
+/* CABEÇALHO */
+
+.top-header {
+    background: var(--pink-light);
+    border: 2px dashed var(--pink);
+    padding: 12px 18px 0;
+}
+
+.top-decoration {
+    text-align: center;
+    font-family: "Courier Prime", monospace;
+    color: var(--pink-dark);
+    font-size: 12px;
+    letter-spacing: 2px;
+    padding: 5px;
+    border-bottom: 1px dotted var(--pink);
+}
+
+.header-content {
+    min-height: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.logo h1 {
+    font-family: "Playfair Display", serif;
+    color: var(--brown);
+    font-size: clamp(30px, 5vw, 47px);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.logo p {
+    color: var(--pink-dark);
+    font-size: 16px;
+    margin-top: 7px;
+}
+
+.logo-star {
+    display: block;
+    color: var(--pink);
+    font-size: 25px;
+}
+
+.header-stamp {
+    position: absolute;
+    right: 12px;
+    top: 24px;
+    width: 85px;
+    height: 85px;
+    border: 2px dashed var(--pink-dark);
+    border-radius: 50%;
+    transform: rotate(12deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink-dark);
+    font-family: "Courier Prime", monospace;
+    line-height: 1.1;
+}
+
+.header-stamp strong {
+    font-size: 18px;
+}
+
+/* NAVEGAÇÃO */
+
+.nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px 0;
+}
+
+.tab-button {
+    border: 1px solid var(--pink);
+    background: #fffdfb;
+    color: var(--brown);
+    padding: 9px 18px;
+    border-radius: 4px 4px 0 0;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.tab-button:hover,
+.tab-button.active {
+    background: var(--pink);
+    color: white;
+}
+
+/* BARRA ANIMADA */
+
+.ticker {
+    overflow: hidden;
+    white-space: nowrap;
+    background: #f7e3e8;
+    border-bottom: 1px dashed var(--pink);
+    border-left: 1px dashed var(--pink);
+    border-right: 1px dashed var(--pink);
+    padding: 7px 0;
+    color: var(--pink-dark);
+    font-family: "Courier Prime", monospace;
+    font-size: 13px;
+}
+
+.ticker span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker-move 25s linear infinite;
+}
+
+@keyframes ticker-move {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* ESTRUTURA */
+
+.content-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 22px;
+    padding: 22px 0;
+    align-items: start;
+}
+
+.main-content {
+    min-width: 0;
+}
+
+.page-section {
+    animation: appear 0.35s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-page][hidden] {
+    display: none !important;
+}
+
+/* INÍCIO */
+
+.welcome-box {
+    position: relative;
+    background: #fff4f5;
+    border: 1px dashed var(--pink);
+    padding: 28px;
+    overflow: hidden;
+}
+
+.small-label,
+.tag {
+    display: inline-block;
+    background: #f5dce3;
+    color: var(--pink-dark);
+    padding: 4px 10px;
+    font-family: "Courier Prime", monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.welcome-box h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(27px, 4vw, 38px);
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 17px 0;
+}
+
+.welcome-box h2 em,
+.section-heading h2 em {
+    color: var(--pink-dark);
+    font-weight: 500;
+}
+
+.welcome-box p {
+    max-width: 580px;
+    margin-bottom: 12px;
+    color: #80645f;
+}
+
+.main-button {
+    background: var(--pink);
+    border: 1px solid var(--pink-dark);
+    color: white;
+    padding: 10px 18px;
+    margin-top: 12px;
+    transition: 0.2s;
+}
+
+.main-button:hover {
+    background: var(--pink-dark);
+    transform: translateY(-2px);
+}
+
+.welcome-decoration {
+    text-align: right;
+    color: var(--pink);
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.photo-placeholder {
+    text-align: center;
+    margin: 25px auto;
+    color: var(--brown-light);
+}
+
+.photo-frame {
+    width: 175px;
+    height: 175px;
+    background: white;
+    border: 1px solid #e5d1c8;
+    box-shadow: 2px 4px 10px #00000012;
+    margin: auto;
+    padding: 12px;
+    transform: rotate(-3deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame span {
+    color: var(--pink);
+    font-size: 35px;
+}
+
+.photo-frame p {
+    font-family: "Courier Prime", monospace;
+    font-size: 12px;
+}
+
+.photo-placeholder small {
+    display: block;
+    margin-top: 15px;
+}
+
+/* DIVISÓRIAS E TÍTULOS */
+
+.section-divider {
+    text-align: center;
+    color: var(--pink);
+    margin: 25px 0;
+    letter-spacing: 4px;
+}
+
+.section-heading {
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 32px;
+    font-weight: 500;
+    margin-top: 12px;
+}
+
+.section-heading p {
+    color: var(--brown-light);
+    margin-top: 5px;
+}
+
+/* POSTAGENS */
+
+.blog-post {
+    background: #fffaf7;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--pink);
+    padding: 19px;
+    margin-bottom: 15px;
+    box-shadow: 2px 3px 7px #00000008;
+}
+
+.post-date {
+    font-family: "Courier Prime", monospace;
+    color: var(--pink-dark);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.blog-post h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 7px 0;
+}
+
+.blog-post p {
+    color: #80645f;
+}
+
+.post-signature {
+    display: block;
+    color: var(--pink-dark);
+    font-size: 13px;
+    text-align: right;
+    margin-top: 12px;
+}
+
+/* DIÁRIO E MEMÓRIAS */
+
+.memory-list {
+    display: grid;
+    gap: 14px;
+}
+
+.memory-card {
+    display: flex;
+    gap: 16px;
+    background: #fffaf7;
+    border: 1px dashed var(--border);
+    padding: 18px;
+    transition: 0.2s;
+}
+
+.memory-card:hover {
+    border-color: var(--pink);
+    transform: translateY(-2px);
+}
+
+.memory-number {
+    min-width: 42px;
+    height: 42px;
+    background: #f6dfe5;
+    color: var(--pink-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Courier Prime", monospace;
+    font-weight: bold;
+}
+
+.memory-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.memory-date {
+    font-family: "Courier Prime", monospace;
+    color: var(--pink-dark);
+    font-size: 12px;
+}
+
+.memory-content h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.memory-content p {
+    color: var(--brown-light);
+}
+
+.memory-toggle {
+    background: transparent;
+    border: 1px solid var(--pink);
+    color: var(--pink-dark);
+    padding: 6px 12px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.memory-toggle:hover {
+    background: var(--pink-light);
+}
+
+.memory-details {
+    border-top: 1px dotted var(--pink);
+    margin-top: 14px;
+    padding-top: 14px;
+}
+
+.memory-details[hidden] {
+    display: none !important;
+}
+
+.memory-photo {
+    background: #f9e9ec;
+    border: 1px dashed var(--pink);
+    padding: 25px 10px;
+    text-align: center;
+    color: var(--pink-dark);
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.quote {
+    margin-top: 25px;
+    padding: 25px;
+    text-align: center;
+    background: var(--pink-light);
+    border: 1px dashed var(--pink);
+    color: var(--brown-light);
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.quote span {
+    color: var(--pink);
+    font-size: 30px;
+}
+
+/* REDAÇÕES */
+
+.essay-search {
+    background: #fff4f5;
+    border: 1px dashed var(--pink);
+    padding: 17px;
+    margin-bottom: 20px;
+}
+
+.essay-search label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--brown);
+}
+
+.essay-search input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--border);
+    background: white;
+    outline: none;
+}
+
+.essay-search input:focus,
+#guestbook-form input:focus,
+#guestbook-form textarea:focus {
+    border-color: var(--pink-dark);
+}
+
+#essay-count {
+    font-size: 13px;
+    color: var(--pink-dark);
+    margin-top: 7px;
+}
+
+.essay-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 13px;
+}
+
+.essay-card {
+    background: #fffaf7;
+    border: 1px solid var(--border);
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+    min-height: 180px;
+}
+
+.essay-card .essay-number {
+    color: var(--pink-dark);
+    font-family: "Courier Prime", monospace;
+    font-size: 12px;
+}
+
+.essay-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 8px 0;
+}
+
+.essay-card p {
+    font-size: 14px;
+    color: var(--brown-light);
+    flex: 1;
+}
+
+.essay-card button {
+    align-self: flex-start;
+    background: transparent;
+    color: var(--pink-dark);
+    border: 1px solid var(--pink);
+    padding: 6px 10px;
+    margin-top: 13px;
+}
+
+.essay-card button:hover {
+    background: var(--pink-light);
+}
+
+.no-essays {
+    grid-column: 1 / -1;
+    background: #fff4f5;
+    padding: 20px;
+    text-align: center;
+    border: 1px dashed var(--pink);
+}
+
+/* JANELA DAS REDAÇÕES */
+
+.essay-modal {
+    width: min(650px, 90%);
+    max-height: 85vh;
+    margin: auto;
+    padding: 30px;
+    border: 2px dashed var(--pink);
+    background: var(--paper);
+    color: var(--brown);
+    box-shadow: 0 10px 35px #00000030;
+}
+
+.essay-modal::backdrop {
+    background: #49353b99;
+}
+
+.modal-close {
+    float: right;
+    border: none;
+    background: transparent;
+    color: var(--pink-dark);
+    font-size: 28px;
+    line-height: 1;
+}
+
+.modal-number {
+    display: block;
+    color: var(--pink-dark);
+    font-family: "Courier Prime", monospace;
+    margin-bottom: 10px;
+}
+
+.essay-modal h2 {
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-size: 27px;
+}
+
+.modal-theme {
+    color: var(--pink-dark);
+    font-size: 14px;
+    margin: 8px 0 18px;
+}
+
+.modal-text {
+    white-space: pre-wrap;
+    line-height: 1.8;
+    max-height: 55vh;
+    overflow-y: auto;
+}
+
+/* LIVRO DE VISITAS */
+
+.guestbook {
+    background: #fffaf7;
+    border: 1px dashed var(--pink);
+    padding: 22px;
+}
+
+#guestbook-form label {
+    display: block;
+    margin: 12px 0 5px;
+    color: var(--brown);
+}
+
+#guestbook-form input,
+#guestbook-form textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid var(--border);
+    background: white;
+    color: var(--brown);
+    outline: none;
+}
+
+#guestbook-form textarea {
+    min-height: 105px;
+    resize: vertical;
+}
+
+#guestbook-form button {
+    display: block;
+}
+
+.guestbook-divider {
+    text-align: center;
+    color: var(--pink);
+    margin: 25px 0;
+    letter-spacing: 5px;
+}
+
+.guestbook-message {
+    background: #fff2f4;
+    border: 1px solid #efd0d7;
+    padding: 14px;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+}
+
+.guestbook-message strong {
+    color: var(--pink-dark);
+}
+
+.guestbook-message p {
+    margin-top: 6px;
+}
+
+.empty-message {
+    text-align: center;
+    color: var(--brown-light);
+    padding: 20px;
+}
+
+.guestbook-note {
+    text-align: center;
+    color: var(--brown-light);
+    font-size: 12px;
+    margin-top: 15px;
+}
+
+/* BARRA LATERAL */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-box {
+    background: #fff7f5;
+    border: 1px dashed var(--border);
+    padding: 15px;
+}
+
+.sidebar-box h3 {
+    background: #f5e1e5;
+    color: var(--pink-dark);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 7px;
+    margin-bottom: 13px;
+}
+
+.profile-image {
+    width: 105px;
+    height: 105px;
+    margin: 10px auto;
+    border-radius: 50%;
+    background: #f4dfe3;
+    border: 3px double white;
+    outline: 1px dashed var(--pink);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--pink-dark);
+    font-size: 40px;
+}
+
+.profile-name {
+    text-align: center;
+    font-weight: bold;
+}
+
+.profile-description {
+    text-align: center;
+    font-size: 13px;
+    color: var(--brown-light);
+    margin: 7px 0;
+}
+
+.profile-status {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 7px;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+}
+
+.online-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #85b88c;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.sidebar-links {
+    list-style: none;
+}
+
+.sidebar-links li {
+    border-bottom: 1px dotted var(--border);
+    padding: 7px 0;
+}
+
+.sidebar-links button {
+    background: transparent;
+    border: none;
+    color: var(--brown);
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+}
+
+.sidebar-links button:hover {
+    color: var(--pink-dark);
+    padding-left: 5px;
+}
+
+/* MÚSICA */
+
+.music-cover {
+    width: 115px;
+    height: 115px;
+    background: linear-gradient(135deg, #f5d8df, #eab8c8);
+    border: 5px solid white;
+    outline: 1px dashed var(--pink);
+    margin: 12px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 42px;
+    color: white;
+    box-shadow: 2px 3px 7px #00000015;
+}
+
+.music-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.music-subtitle {
+    text-align: center;
+    color: var(--brown-light);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.music-box audio {
+    width: 100%;
+    height: 35px;
+}
+
+.music-note {
+    text-align: center;
+    color: var(--pink-dark);
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.visit-counter {
+    background: white;
+    border: 1px dotted var(--pink);
+    text-align: center;
+    padding: 9px;
+    color: var(--pink-dark);
+    font-size: 13px;
+}
+
+.favorite-text {
+    font-size: 13px;
+    color: var(--brown-light);
+}
+
+/* RODAPÉ */
+
+.footer {
+    text-align: center;
+    padding: 22px 10px;
+    background: var(--pink-light);
+    border: 1px dashed var(--pink);
+    color: var(--pink-dark);
+    font-size: 13px;
+}
+
+.footer p + p {
+    margin-top: 5px;
+    font-family: "Courier Prime", monospace;
+    font-size: 11px;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 800px) {
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header-stamp {
+        width: 65px;
+        height: 65px;
+        right: 0;
+    }
+
+    .header-stamp strong {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 520px) {
+    .page-wrapper {
+        width: 96%;
+        padding: 10px;
+        margin: 10px auto;
+    }
+
+    .header-content {
+        min-height: 140px;
+    }
+
+    .header-stamp {
+        display: none;
+    }
+
+    .nav {
+        gap: 5px;
+    }
+
+    .tab-button {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .welcome-box {
+        padding: 19px;
+    }
+
+    .memory-card {
+        padding: 12px;
+        gap: 10px;
+    }
+
+    .essay-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+}
